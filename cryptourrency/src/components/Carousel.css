@@ -1,0 +1,36 @@
+.carousel{
+    height: 400px;
+    color: white;
+    background-image: url("../images/banner2.jpg");
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    
+}
+.header1{
+    font-size: 3.75rem;
+    margin-bottom: 15px;
+    font-weight: bold;
+}
+.detail{
+     color: darkgray;
+}
+.images-content{
+    margin-top: 60px;
+    display: flex;
+    justify-content: center;
+    gap: 20px;
+    height: 100px;
+    width: 80%;
+    overflow:hidden;
+
+}
+.footer-content{
+    margin:0px;
+    height: 20vh;
+    background-color:black;
+    color: white;
+}
+
+

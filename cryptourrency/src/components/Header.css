@@ -1,0 +1,20 @@
+.header{
+    color: gold;
+    display: flex;
+    justify-content: space-around;
+    font-weight: bold;
+    font-size: larger;
+    align-items: center;
+    background-color: rgba(0, 0, 0, 0.89);
+    position: static;
+}
+.Icon{
+    font-size: 35px;
+}
+.Icon:hover{
+    cursor: pointer;
+    color: antiquewhite;
+}
+.logo:hover{
+  cursor: pointer;
+}
