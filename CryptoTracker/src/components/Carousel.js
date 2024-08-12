@@ -27,7 +27,7 @@ const Carousel = () => {
       height="80"
       onError={handleError}
       />
-      <p>{coin.current_price}</p>
+      <p>$ {coin.current_price}</p>
     
       </> 
     
