@@ -12,7 +12,6 @@ const Carousel = () => {
   const fetchCoin = async () =>{
     const data = await fetch(TrendingCoins_URL)
     const json = await data.json();
-    console.log(json);
     setCoinData(json)
   }
   const handleError=(e)=>{
@@ -20,16 +19,16 @@ const Carousel = () => {
   }
   const items = coinData.map((coin) =>{
     return(
-    <>
-      <img
+    <div>
+      <img 
       src={coin?.image}
       alt={coin?.name}  
       height="80"
       onError={handleError}
       />
-      <p>$ {coin.current_price}</p>
+      <p>₹ {coin.current_price}</p>
     
-      </> 
+      </div> 
     
     )
   })
@@ -55,6 +54,7 @@ return (
            autoPlayInterval={1000}
            animationDuration={1500}
            disableDotsControls
+           disableButtonsControls
              responsive={responsive}
              autoPlay
              items={items}

@@ -17,32 +17,69 @@
      color: darkgray;
 }
 .images-content{
-    position: relative;
     margin-top: 60px;
-    display: flex;
-    justify-content: center;
     width: 80%;
 }
-.image-photo{
-    width: 100px;
+.image-content{
     display: flex;
     flex-direction: column;
     align-items: center;
-    justify-content: center;
-    cursor: pointer;
 }
-.footer-content{
-    padding-top: 10px;
-    display: flex;
-    justify-content: center;
-    height: 20vh;
-    background-color:rgba(0, 0, 0, 0.681);
+.table-Des{
+    margin: 0%;
     color: white;
 }
-.footer-header{
-    margin: 0px;
+.CoinTable-BG{
+    background-color: rgba(0, 0, 0, 0.89);
 }
-.coin-img{
+.CoinTable-content{
+    margin: auto;
+    padding-top: 10px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    width: 80%;
+}
+.custom-textfield{
     width: inherit;
-    object-fit: cover;
+}
+.custom-textfield input {
+    color: white; /* Change text color */
+  }
+  
+  .custom-textfield label {
+    color: white; /* Change label color */
+  }
+  
+  .custom-textfield .MuiOutlinedInput-root .MuiOutlinedInput-notchedOutline {
+    border-color: white; /* Change border color */
+  }
+  
+  .custom-textfield .MuiOutlinedInput-root:hover .MuiOutlinedInput-notchedOutline {
+    border-color: lightgray; /* Change border color on hover */
+  }
+  
+  .custom-textfield .MuiOutlinedInput-root.Mui-focused .MuiOutlinedInput-notchedOutline {
+    border-color: lightblue; /* Change border color when focused */
+  }
+  .table-heading{
+    display: flex;
+    width: inherit;
+
+    background-color: gold;
+    color: black;
+    font-weight: bold;
+    justify-content:space-around;
+    border-radius: 5px 5px 0px 0px;
+  }
+ .table{
+    color: wheat;
+    display: flex;
+    flex-direction: column; 
+    width: inherit;
+     }
+.table-content{
+    display: flex;
+    justify-content: space-between;
+    border-bottom: 1px dotted gray;
 }
