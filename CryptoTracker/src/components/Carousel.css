@@ -1,4 +1,4 @@
-.carousel{
+.carousel {
     height: 400px;
     color: white;
     background-image: url("../images/banner2.jpg");
@@ -6,80 +6,111 @@
     display: flex;
     flex-direction: column;
     align-items: center;
-    
+
 }
-.header1{
+
+.header1 {
     font-size: 3.75rem;
     margin-bottom: 15px;
     font-weight: bold;
 }
-.detail{
-     color: darkgray;
+
+.detail {
+    color: darkgray;
 }
-.images-content{
+
+.images-content {
     margin-top: 60px;
     width: 80%;
 }
-.image-content{
+
+/* .image-content{
     display: flex;
     flex-direction: column;
     align-items: center;
-}
-.table-Des{
+} */
+.table-Des {
     margin: 0%;
     color: white;
 }
-.CoinTable-BG{
+
+.CoinTable-BackGround {
     background-color: rgba(0, 0, 0, 0.89);
 }
-.CoinTable-content{
+
+.CoinTable-content {
     margin: auto;
-    padding-top: 10px;
+    padding-top: 1%;
     display: flex;
     flex-direction: column;
     align-items: center;
     width: 80%;
 }
-.custom-textfield{
+
+.custom-textfield {
     width: inherit;
 }
+
 .custom-textfield input {
-    color: white; /* Change text color */
-  }
-  
-  .custom-textfield label {
-    color: white; /* Change label color */
-  }
-  
-  .custom-textfield .MuiOutlinedInput-root .MuiOutlinedInput-notchedOutline {
-    border-color: white; /* Change border color */
-  }
-  
-  .custom-textfield .MuiOutlinedInput-root:hover .MuiOutlinedInput-notchedOutline {
-    border-color: lightgray; /* Change border color on hover */
-  }
-  
-  .custom-textfield .MuiOutlinedInput-root.Mui-focused .MuiOutlinedInput-notchedOutline {
-    border-color: lightblue; /* Change border color when focused */
-  }
-  .table-heading{
+    color: white;
+}
+
+.custom-textfield label {
+    color: white;
+}
+
+.custom-textfield .MuiOutlinedInput-root .MuiOutlinedInput-notchedOutline {
+    border-color: white;
+}
+
+.custom-textfield .MuiOutlinedInput-root:hover .MuiOutlinedInput-notchedOutline {
+    border-color: lightgray;
+}
+
+.custom-textfield .MuiOutlinedInput-root.Mui-focused .MuiOutlinedInput-notchedOutline {
+    border-color: lightblue;
+}
+
+.table-heading {
     display: flex;
     width: inherit;
-
     background-color: gold;
     color: black;
     font-weight: bold;
-    justify-content:space-around;
     border-radius: 5px 5px 0px 0px;
-  }
- .table{
+}
+.table {
     color: wheat;
     display: flex;
-    flex-direction: column; 
+    flex-direction: column;
     width: inherit;
-     }
-.table-content{
+}
+
+.table-content {
     display: flex;
-    justify-content: space-between;
-    border-bottom: 1px dotted gray;
+    border-bottom: 1px solid rgba(81, 81, 81, 1);
+    align-items: center;
+    padding: 16px;
+    color: white;
+}
+.heading1 {
+    width: 40%;
+    padding-left: 10px;
+    display: flex;
+    align-items: center;
+    padding-left: 2%;
+}
+.heading2 {
+    width: 20%;
+    text-align: end;
+}
+.heading3 {
+    width: 20%;
+    text-align: end;
+    padding-right: 10px;
+}
+.heading1-content {
+    display: flex;
+    flex-direction: column;
+    margin-left: 5%;
 }

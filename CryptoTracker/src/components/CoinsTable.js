@@ -4,23 +4,18 @@ import "./Carousel.css";
 import TextField from "@mui/material/TextField";
 const CoinsTable = () => {
   const [coins, setCoins] = useState([]);
-  const [loading, setLoding] = useState(false);
-
   const fetchDate = async () => {
-    setLoding(true);
     const data = await fetch(CoinList);
     const json = await data.json();
     setCoins(json);
-    setLoding(false);
     console.log(json);
   };
-
   useEffect(() => {
     fetchDate();
   }, []);
 
   return (
-    <div className="CoinTable-BG">
+    <div className="CoinTable-BackGround">
       <div className="CoinTable-content">
         <h2 className="table-Des">Cryptocurrency Prices by Market Cap</h2>
         <TextField
@@ -30,20 +25,27 @@ const CoinsTable = () => {
           margin="normal"
         />
         <div className="table-heading">
-          <p>coin</p>
-          <p>Price</p>
-          <p>24h Change</p>
-          <p>Market Cap</p>
+          <p className="heading1">coin</p>
+          <p className="heading2">Price</p>
+          <p className="heading2">24h Change</p>
+          <p className="heading3">Market Cap</p>
         </div>
         <div className="table">
           {coins.map((coin, index) => {
-            return ( 
-              <div className="table-content" key = {coin.id}>
-                <p>{coin.name}</p>
-                <p>coin</p>
-                <p>coin</p>
-                <p>{coin.market_cap}</p>
-                
+            return (
+              <div className="table-content" key={coin.id}>
+                <div className="heading1">
+                  <img src={coin?.image} alt={coin?.name} height="50px" />
+                  <div className="heading1-content">
+                  <span style={{ fontSize: '22px' }}>{coin.symbol.toUpperCase()}</span>
+                  <span style={{ color: "darkgrey" }}>{coin.name}</span>
+                  </div>
+                </div>
+                <p className="heading2">{coin.current_price}</p>
+                <p className="heading2" style={{color: coin.market_cap_change_percentage_24h>0 ? "rgb(14, 203, 129)" : "red", fontWeight:500}}>{coin.market_cap_change_percentage_24h.toFixed(2)}%</p>
+                <p className="heading3">
+                  ₹{(coin.market_cap / 1000000).toFixed(0)}M
+                </p>
               </div>
             );
           })}
