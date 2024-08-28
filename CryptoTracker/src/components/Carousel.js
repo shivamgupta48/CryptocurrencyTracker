@@ -1,37 +1,36 @@
-import React, { useEffect,useState } from "react";
+import React, { useEffect, useState } from "react";
 import "./Carousel.css";
 import { TrendingCoins_URL } from "../config/api";
-import AliceCarousel from 'react-alice-carousel';
+import AliceCarousel from "react-alice-carousel";
 
 const Carousel = () => {
   const [coinData, setCoinData] = useState([]);
 
-  useEffect(()=>{
+  useEffect(() => {
     fetchCoin();
-  },[])
-  const fetchCoin = async () =>{
-    const data = await fetch(TrendingCoins_URL)
+  }, []);
+  const fetchCoin = async () => {
+    const data = await fetch(TrendingCoins_URL);
     const json = await data.json();
-    setCoinData(json)
-  }
-  const handleError=(e)=>{
-    e.target.src="https://coin-images.coingecko.com/coins/images/12171/large/polkadot.png?1696512008"
-  }
-  const items = coinData.map((coin) =>{
-    return(
-    <div>
-      <img 
-      src={coin?.image}
-      alt={coin?.name}  
-      height="80"
-      onError={handleError}
-      />
-      <p>₹ {coin.current_price}</p>
-    
-      </div> 
-    
-    )
-  })
+    setCoinData(json);
+  };
+  const handleError = (e) => {
+    e.target.src =
+      "https://coin-images.coingecko.com/coins/images/12171/large/polkadot.png?1696512008";
+  };
+  const items = coinData.map((coin) => {
+    return (
+      <div>
+        <img
+          src={coin?.image}
+          alt={coin?.name}
+          height="80"
+          onError={handleError}
+        />
+        <p>₹ {coin.current_price}</p>
+      </div>
+    );
+  });
   const responsive = {
     0: {
       items: 2,
@@ -40,7 +39,7 @@ const Carousel = () => {
       items: 4,
     },
   };
-return (
+  return (
     <>
       <div className="carousel">
         <h1 className="header1">Crypto Hunter</h1>
@@ -48,17 +47,17 @@ return (
           Get all the Info regarding your favorite Crypto Currency
         </div>
         <div className="images-content">
-        <AliceCarousel
-           mouseTracking
-           infinite
-           autoPlayInterval={1000}
-           animationDuration={1500}
-           disableDotsControls
-           disableButtonsControls
-             responsive={responsive}
-             autoPlay
-             items={items}
-        />
+          <AliceCarousel
+            mouseTracking
+            infinite
+            autoPlayInterval={1000}
+            animationDuration={1500}
+            disableDotsControls
+            disableButtonsControls
+            responsive={responsive}
+            autoPlay
+            items={items}
+          />
         </div>
       </div>
     </>
