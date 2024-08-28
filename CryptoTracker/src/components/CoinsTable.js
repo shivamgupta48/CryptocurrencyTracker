@@ -1,10 +1,11 @@
 import React, { useEffect, useState } from "react";
+import { Link } from "react-router-dom";
 import { CoinList } from "../config/api";
 import "./Carousel.css";
 import TextField from "@mui/material/TextField";
 const CoinsTable = () => {
   const [coins, setCoins] = useState([]);
-  const [searchCoin , setSearchCoin] = useState("");
+  const [searchCoin, setSearchCoin] = useState("");
   const fetchDate = async () => {
     const data = await fetch(CoinList);
     const json = await data.json();
@@ -14,14 +15,18 @@ const CoinsTable = () => {
   useEffect(() => {
     fetchDate();
   }, []);
-  const filteredCoins = coins.filter(coin =>
-    coin.name.toLowerCase().includes(searchCoin.toLowerCase()) ||
-    coin.symbol.toLowerCase().includes(searchCoin.toLowerCase())
+  const filteredCoins = coins.filter(
+    (coin) =>
+      coin.name.toLowerCase().includes(searchCoin.toLowerCase()) ||
+      coin.symbol.toLowerCase().includes(searchCoin.toLowerCase())
   );
   const formatCurrency = (value) => {
-    return new Intl.NumberFormat('en-IN', { style: 'currency', currency: 'INR' }).format(value);
-};
-  
+    return new Intl.NumberFormat("en-IN", {
+      style: "currency",
+      currency: "INR",
+    }).format(value);
+  };
+
   return (
     <div className="CoinTable-BackGround">
       <div className="CoinTable-content">
@@ -32,7 +37,7 @@ const CoinsTable = () => {
           variant="outlined"
           margin="normal"
           value={searchCoin}
-          onChange={(e) =>{
+          onChange={(e) => {
             setSearchCoin(e.target.value);
           }}
         />
@@ -45,18 +50,41 @@ const CoinsTable = () => {
         <div className="table">
           {filteredCoins.map((coin, index) => {
             return (
-              <div className="table-content" key={coin.id}>
-                <div className="heading1">
-                  <img src={coin?.image} alt={coin?.name} height="50px" />
-                  <div className="heading1-content">
-                  <span style={{ fontSize: '22px' }}>{coin.symbol.toUpperCase()}</span>
-                  <span style={{ color: "darkgrey" }}>{coin.name}</span>
+              <Link
+                key={coin.id}
+                to={"/CoinPage/" + coin.id}
+                className="no-underline"
+              >
+                <div className="table-content">
+                  <div className="heading1">
+                    <img src={coin?.image} alt={coin?.name} height="50px" />
+                    <div className="heading1-content">
+                      <span style={{ fontSize: "22px" }}>
+                        {coin.symbol.toUpperCase()}
+                      </span>
+                      <span style={{ color: "darkgrey" }}>{coin.name}</span>
+                    </div>
                   </div>
+                  <p className="heading2">
+                    {formatCurrency(coin.current_price)}
+                  </p>
+                  <p
+                    className="heading2"
+                    style={{
+                      color:
+                        coin.market_cap_change_percentage_24h > 0
+                          ? "rgb(14, 203, 129)"
+                          : "red",
+                      fontWeight: 500,
+                    }}
+                  >
+                    {coin.market_cap_change_percentage_24h.toFixed(2)}%
+                  </p>
+                  <p className="heading3">
+                    {formatCurrency(coin.market_cap / 1000000)}M
+                  </p>
                 </div>
-                <p className="heading2">{formatCurrency(coin.current_price)}</p>
-                <p className="heading2" style={{color: coin.market_cap_change_percentage_24h>0 ? "rgb(14, 203, 129)" : "red", fontWeight:500}}>{coin.market_cap_change_percentage_24h.toFixed(2)}%</p>
-                <p className="heading3">{formatCurrency(coin.market_cap / 1000000)}M</p>
-              </div>
+              </Link>
             );
           })}
         </div>
