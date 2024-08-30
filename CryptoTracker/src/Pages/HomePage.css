@@ -1,0 +1,61 @@
+.CoinPage{
+    background-color: #14161a;
+    color: white;
+    padding-top: 25px;
+
+}
+.CoinPage-left{
+    width: 30%;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    border-right: 2px solid grey;
+    padding: 0px 24px;
+}
+.Coin-img{
+    height: 200px;
+    width: 200px;
+    object-fit: cover;
+}
+.Coin-name{
+    margin: 0%;
+    font-size: 3rem;
+    font-weight: bold;
+    margin-bottom: 20px;
+
+}
+.Coin-des{
+    margin: 0%;
+    font-size: 18px;
+    text-align: justify;
+    font-weight: 200;
+    margin-bottom: 20px;
+}
+.Coin-detail{
+    width: 100%;
+    display:flex;
+    flex-direction: column;
+}
+.Coin-rank{
+    display: flex;
+    margin-bottom: 20px;
+}
+.Coin-currP{
+    display: flex;
+    margin-bottom: 20px;
+ }
+ .Coin-marC{
+     display: flex;
+     margin-bottom: 20px;
+  }
+.Demand{
+    font-size: 1.5rem;
+    margin: 0%;
+    font-weight: bold;
+}
+.Value{
+    font-size: 1.5rem;
+    margin: 0%;
+}
+
+ 
