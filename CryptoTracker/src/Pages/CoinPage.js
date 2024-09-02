@@ -2,11 +2,11 @@ import React, { useEffect, useState, useCallback } from 'react';
 import { useParams } from 'react-router-dom';
 import { SingleCoin } from '../config/api';
 import './HomePage.css';
+import CoinChart from './CoinChart';
 
 const CoinPage = () => {
   const { id } = useParams();
   const [coinData, setCoinData] = useState(null);
-
   const fetchData = useCallback(async () => {
     try {
       const response = await fetch(SingleCoin + id);
@@ -24,7 +24,6 @@ const CoinPage = () => {
     fetchData();
   }, [fetchData]); // Dependency array includes fetchData
 
-  console.log(coinData);
   const description = coinData?.description?.en.split('.')[0] + '.';
   const formatCurrency = (value) => {
   return new Intl.NumberFormat("en-IN", {
@@ -64,7 +63,10 @@ const CoinPage = () => {
         
       </div>
       <div className='CoinPage-right'>
-        {/* Content for the right side */}
+      <CoinChart
+       key={id}
+       Data = {id}/>
+
       </div>
     </div>
   );
