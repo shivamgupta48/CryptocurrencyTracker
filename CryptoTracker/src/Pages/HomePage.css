@@ -1,11 +1,17 @@
+html, body {
+    height: 100%;
+    margin: 0;
+}
 .CoinPage{
+    display: flex;
     background-color: #14161a;
     color: white;
     padding-top: 25px;
+    min-height: calc(100vh - 85px);
 
 }
 .CoinPage-left{
-    width: 30%;
+    width: 25%;
     display: flex;
     flex-direction: column;
     align-items: center;
@@ -26,10 +32,12 @@
 }
 .Coin-des{
     margin: 0%;
-    font-size: 18px;
+    font-size: 1.13rem;
     text-align: justify;
-    font-weight: 200;
+    font-weight: 400;
     margin-bottom: 20px;
+    line-height: 1.75;
+    letter-spacing: 0.00938em;
 }
 .Coin-detail{
     width: 100%;
@@ -57,5 +65,9 @@
     font-size: 1.5rem;
     margin: 0%;
 }
-
+.CoinPage-right{
+    width: 75%;
+    padding: 25px;
+    color: white;
+}
  
