@@ -66,7 +66,6 @@ const CoinPage = () => {
       <CoinChart
        key={id}
        Data = {id}/>
-
       </div>
     </div>
   );

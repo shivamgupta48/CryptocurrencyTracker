@@ -121,4 +121,15 @@
     text-decoration: none;
     color: inherit; /* This will ensure the link inherits the color of its parent element */
   }
-  
+  @media screen and (max-width:480px) {
+    .header1 {
+        font-size: 2.5rem;
+    }
+    .detail{
+        text-align: center;
+    }
+    .table-Des{
+        font-size: 32px;
+        text-align: center;
+    }
+}
