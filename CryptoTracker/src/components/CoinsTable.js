@@ -41,6 +41,7 @@ const CoinsTable = () => {
             setSearchCoin(e.target.value);
           }}
         />
+        <div className="whole-table">
         <div className="table-heading">
           <p className="heading1">coin</p>
           <p className="heading2">Price</p>
@@ -87,6 +88,7 @@ const CoinsTable = () => {
               </Link>
             );
           })}
+        </div>
         </div>
       </div>
     </div>
