@@ -8,7 +8,11 @@
     align-items: center;
 
 }
-
+.coin-price{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
 .header1 {
     font-size: 3.75rem;
     margin-bottom: 15px;
@@ -44,6 +48,7 @@
     width: 90%;
 }
 
+
 .custom-textfield {
     width: inherit;
 }
@@ -67,10 +72,12 @@
 .custom-textfield .MuiOutlinedInput-root.Mui-focused .MuiOutlinedInput-notchedOutline {
     border-color: lightblue;
 }
+.whole-table{
+    width: inherit
+}
 
 .table-heading {
     display: flex;
-    width: inherit;
     background-color: gold;
     color: black;
     font-weight: bold;
@@ -80,7 +87,6 @@
     color: wheat;
     display: flex;
     flex-direction: column;
-    width: inherit;
     
 }
 
@@ -88,7 +94,7 @@
     display: flex;
     border-bottom: 1px solid rgba(81, 81, 81, 1);
     align-items: center;
-    padding: 16px;
+    padding: 16px 0px 16px 0px;
     color: white;
     
 }
@@ -117,11 +123,12 @@
     flex-direction: column;
     margin-left: 5%;
 }
+
 .no-underline {
     text-decoration: none;
     color: inherit; /* This will ensure the link inherits the color of its parent element */
   }
-  @media screen and (max-width:480px) {
+  @media screen and (max-width:520px) {
     .header1 {
         font-size: 2.5rem;
     }
@@ -132,4 +139,15 @@
         font-size: 32px;
         text-align: center;
     }
+  .header1 {
+          font-size: 2.5rem;
+        }
+        .whole-table {
+          overflow-x: auto; /* Allow horizontal scrolling */
+        }
+        .table-heading, .table-content {
+          min-width: 600px; /* Ensure the table is wider than the screen */
+        }
+
+      
 }

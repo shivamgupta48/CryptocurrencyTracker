@@ -2,6 +2,7 @@ import React, { useEffect, useState } from "react";
 import "./Carousel.css";
 import { TrendingCoins_URL } from "../config/api";
 import AliceCarousel from "react-alice-carousel";
+import { Link } from "react-router-dom";
 
 const Carousel = () => {
   const [coinData, setCoinData] = useState([]);
@@ -20,7 +21,12 @@ const Carousel = () => {
   };
   const items = coinData.map((coin) => {
     return (
-      <div>
+      <div className="coin-price">
+        <Link
+                key={coin.id}
+                to={"/CoinPage/" + coin.id}
+                className="no-underline"
+              >
         <img
           src={coin?.image}
           alt={coin?.name}
@@ -28,6 +34,7 @@ const Carousel = () => {
           onError={handleError}
         />
         <p>₹ {coin.current_price}</p>
+        </Link>
       </div>
     );
   });
