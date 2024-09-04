@@ -89,7 +89,7 @@ html, body {
       border-right: none;
     }
     .CoinPage-right{
-    
+        width: 90%;
         height: 50vh;
     }
     

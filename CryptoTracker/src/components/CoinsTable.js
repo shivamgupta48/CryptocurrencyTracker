@@ -10,7 +10,6 @@ const CoinsTable = () => {
     const data = await fetch(CoinList);
     const json = await data.json();
     setCoins(json);
-    console.log(json);
   };
   useEffect(() => {
     fetchDate();
